@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Detail</title>
+        <style>body {padding: 10px;}</style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <p>{{ data.name }} | {{ data.title }}</p>
+        <p>{{ data.content}}</p>
+
+        <input type="button" onclick="location.href='{% url 'edit' note_id=data.id %}'" 
+        value="編集" style="background: blue; color:white">
+
+        <input type="button" onclick="location.href='{% url 'delete' note_id=data.id %}'" 
+                value="削除" style="background: red; color:white">
+        
+        <a href="{% url 'index' %}">一覧画面に戻る</a>
+    </body>
+</html>
+

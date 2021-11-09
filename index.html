@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html jang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>一覧画面</title>
+        <style>body {padding: 10px;}</style>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <table border="1" width="400">
+            <tr align="center">
+                <th>名前</th><th>題名</th><th>作成日</th>
+            </tr>
+            {% for i in all_data %}
+                <tr align="center">
+                    <td>{{ i.name }}</td>
+                    <td><a href="{% url 'detail' note_id=i.id %}">{{ i.title }}</a></td>
+                    <td>{{ i.create_date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <p></p>
+        <a href="{% url 'new' %}">新規作成</a>
+    </body>
+</html>
+
